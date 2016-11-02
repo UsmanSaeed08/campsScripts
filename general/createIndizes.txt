@@ -1,0 +1,119 @@
+ALTER TABLE sequences_other_database ADD INDEX cindex1 (sequenceid, db);
+
+ALTER TABLE alignments ADD INDEX sequences_sequenceid_query (sequences_sequenceid_query);
+
+ALTER TABLE alignments ADD INDEX sequences_sequenceid_hit (sequences_sequenceid_hit);
+
+ALTER TABLE clusters_mcl ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE clusters_mcl ADD INDEX cindex2 (cluster_id,cluster_threshold,redundant);
+
+ALTER TABLE clusters_mcl ADD INDEX cindex3 (cluster_threshold,sequences_sequenceid,redundant);
+
+ALTER TABLE clusters_mcl ADD INDEX cindex4 (cluster_id,cluster_threshold,sequences_sequenceid);
+
+ALTER TABLE clusters_mcl ADD INDEX cluster_threshold (cluster_threshold);
+
+ALTER TABLE clusters_mcl ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE sequences_other_database ADD INDEX cindex1 (sequenceid, db);
+
+ALTER TABLE sequences_other_database ADD INDEX cindex2 (name, db);
+
+ALTER TABLE sequences_other_database ADD INDEX cindex3 (additional_information, db);
+
+ALTER TABLE other_database ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE other_database ADD INDEX cindex1 (sequences_sequenceid, db);
+
+ALTER TABLE other_database ADD INDEX cindex2 (sequences_other_database_sequenceid, db);
+
+ALTER TABLE other_database_hierarchies ADD INDEX cindex1 (key_,db);
+
+ALTER TABLE pdbtm2scop_cath ADD INDEX cindex1 (pdb_id,db);
+
+ALTER TABLE pdbtm2scop_cath ADD INDEX cindex2 (classification,db);
+
+ALTER TABLE clusters_mcl_nr_info ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE clusters_mcl_nr_info ADD INDEX cluster_id (cluster_id);
+
+ALTER TABLE clusters_mcl_nr_info ADD INDEX cluster_threshold (cluster_threshold);
+
+ALTER TABLE clusters_mcl_info ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE clusters_mcl_info ADD INDEX cluster_id (cluster_id);
+
+ALTER TABLE clusters_mcl_info ADD INDEX cluster_threshold (cluster_threshold);
+
+ALTER TABLE tms_cores ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE tms_cores ADD INDEX cindex2 (cluster_id,cluster_threshold,sequences_sequenceid);
+
+ALTER TABLE tms_cores ADD INDEX cindex3 (cluster_id,cluster_threshold,tms_core_id);
+
+ALTER TABLE tms_blocks ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE tms_blocks ADD INDEX cindex2 (cluster_id,cluster_threshold,sequences_sequenceid);
+
+ALTER TABLE tms_blocks ADD INDEX cindex3 (cluster_id,cluster_threshold,tms_block_id);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX cindex1 (cluster_id,cluster_threshold);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX cindex2 (cluster_id,cluster_threshold,redundant);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX cindex3 (cluster_threshold,sequences_sequenceid,redundant);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX cindex4 (cluster_id,cluster_threshold,sequences_sequenceid);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX cluster_threshold (cluster_threshold);
+
+ALTER TABLE clusters_mcl_2ndRun ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2uniprot ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2pdb ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2genbank ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2uniprot ADD INDEX uniprot_name (uniprot_name);
+
+ALTER TABLE camps2pdb ADD INDEX pdb_name (pdb_name);
+
+ALTER TABLE camps2genbank ADD INDEX genbank_name (genbank_name);
+
+ALTER TABLE ec_classification ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE ec_classification ADD INDEX uniprot_name (uniprot_name);
+
+ALTER TABLE camps2eggnog ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2eggnog ADD INDEX group_ (group_);
+
+ALTER TABLE topology_images ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE fh_clusters ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE fh_clusters ADD INDEX cindex1 (code,redundant);
+
+ALTER TABLE fh_clusters ADD INDEX cindex2 (code,sequences_sequenceid);
+
+ALTER TABLE fh_clusters_info ADD INDEX code (code);
+
+ALTER TABLE fh_clusters_nr_info ADD INDEX code (code);
+
+ALTER TABLE fh_clusters_nr_da ADD INDEX code (code);
+
+ALTER TABLE camps2uniprot ADD INDEX entry_name (entry_name);
+
+ALTER TABLE camps2uniprot ADD INDEX accession (accession);
+
+ALTER TABLE camps2uniprot ADD INDEX sequences_sequenceid (sequences_sequenceid);
+
+ALTER TABLE camps2uniprot_taxonomies ADD INDEX species (species);
+
+ALTER TABLE taxonomies ADD INDEX species (species);
+
+ALTER TABLE cp_clusters ADD INDEX code (code);
+
+ALTER TABLE cp_clusters ADD INDEX cindex4 (code,type);
